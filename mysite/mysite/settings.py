@@ -41,6 +41,7 @@ CSRF_COOKIE_SECURE = True
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    #'hello.apps.PollsConfig',
     'mysite.apps.MainConfig',
     'django.contrib.admin',
     'django.contrib.auth',
