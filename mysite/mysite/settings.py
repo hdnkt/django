@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # set True for testing, False for production
-DEBUG = False #= os.getenv('NODE_ENV', 'production') != 'production'
+DEBUG = True #= os.getenv('NODE_ENV', 'production') != 'production'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if DEBUG:

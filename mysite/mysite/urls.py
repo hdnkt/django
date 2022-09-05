@@ -8,8 +8,8 @@ def landingpage(request):
     return render(request, 'index.html')
 
 urlpatterns = [
-    path('', landingpage, name='landing'),
-    path('polls/', include('polls.urls')),
-    path('hello/', include('hello.urls')),
-    path('admin/', admin.site.urls),
+    #path('', landingpage, name='landing'),
+    #path('polls/', include('polls.urls')),
+    path('', include('hello.urls')),
+    #path('admin/', admin.site.urls),
 ]
