@@ -88,8 +88,8 @@ def manycontest():
         ans=ret
         for i in range(len(ans)):
             sp = str(ans[i]).split(sep="/")
-            if len(sp)>10 and ans[i].text.split(sep="\n")[7]!="-":
-                dic[sp[10].split(sep="\"")[0]]=ans[i].text.split(sep="\n")[7]
+            if len(sp)>10 and ans[i].text.split(sep="\n")[8]!="-":
+                dic[sp[11].split(sep="\"")[0]]=ans[i].text.split(sep="\n")[8]
     return dic
 
 def onlyRated(his):
@@ -160,15 +160,18 @@ def makeoutputDic(ans,ind,tmp):
 
 
 
-name="yamunaku"
+name="phocom"
 dic = manycontest()
 tmp,ratedHis = getdatas(name,dic)
 ans,ind=maximizeRate(tmp,ratedHis)
 final = makeoutputDic(ans,ind,tmp)
-
 a = [[6,11]]
 b = []
 b.append(a[0])
 b[0][1]=8
-print(a)
+print(final)
 #[{6: 8}]
+
+
+#dic = manycontest()
+#print(dic)
