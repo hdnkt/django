@@ -10,5 +10,6 @@ def landingpage(request):
 urlpatterns = [
     path('', landingpage, name='landing'),
     path('polls/', include('polls.urls')),
+    path('hello/', include('hello.urls')),
     path('admin/', admin.site.urls),
 ]

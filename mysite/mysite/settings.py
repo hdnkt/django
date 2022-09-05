@@ -19,29 +19,40 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # set True for testing, False for production
-DEBUG = os.getenv('NODE_ENV', 'production') != 'production'
+DEBUG = False #= os.getenv('NODE_ENV', 'production') != 'production'
+
+# SECURITY WARNING: keep the secret key used in production secret!
+if DEBUG:
+    SECRET_KEY = "a"
+else:
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+
 
 ALLOWED_HOSTS = [
     '*'  # https://docs.djangoproject.com/en/3.0/ref/settings/#std:setting-ALLOWED_HOSTS
 ]
 
-SECURE_HSTS_SECONDS = 100000
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_PRELOAD = True
-SECURE_REFERRER_POLICY = "origin"
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
+
+if DEBUG == False:
+    SECURE_HSTS_SECONDS = 100000
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_REFERRER_POLICY = "origin"
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+
 # Application definition
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
-    #'hello.apps.PollsConfig',
+    'hello.apps.helloConfig',
     'mysite.apps.MainConfig',
     'django.contrib.admin',
     'django.contrib.auth',
