@@ -8,8 +8,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no">
 
-	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/cfb85db/css/base.css">
-	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
 	<script src="//img.atcoder.jp/public/cfb85db/js/lib/jquery-1.9.1.min.js"></script>
 	<script src="//img.atcoder.jp/public/cfb85db/js/lib/bootstrap.min.js"></script>
 	<script src="//img.atcoder.jp/public/cfb85db/js/cdn/js.cookie.min.js"></script>
@@ -18,7 +16,6 @@
 	<script>
 		var LANG = "ja";
 		var userScreenName = "hdnkt";
-		var csrfToken = "qxwbef9w4qM3npxeYapms8ShiqzBPK/tvhoYVLNLLMI="
 	</script>
 	<script src="//img.atcoder.jp/public/cfb85db/js/utils.js"></script>
 		
@@ -44,7 +41,7 @@
 			<br>
 			レートの計算は<a href= "https://qiita.com/anqooqie/items/92005e337a0d2569bdbd" >この記事</a>を参考にしました。
 			<br>
-			Rated考慮ボタンを追加(動作重め。2000以上か2000に近いような人は付けた方がいいかもしれません)2021/02/18
+			Rated考慮ボタンを追加(動作重め。2000以上か2000に近いなどの、ABCやARCのレギュレーションに引っかかるような人は付けた方がいいかもしれません)2021/02/18
 			<br>
 			ツイートボタンを追加2021/02/18
 			<br>
@@ -67,7 +64,8 @@
 				</p>
 			</form>
 			{{error}}
-			
+	</div>
+
 <div class="mt-2 mb-2" style="line-height: 0;">
 <script src="//code.createjs.com/easeljs-0.8.2.min.js"></script>
 <link href="//fonts.googleapis.com/css?family=Squada+One" rel="stylesheet" type="text/css">
@@ -77,16 +75,23 @@
 {{ final|json_script:"hello-data" }}
 <script>var rating_history = JSON.parse(document.getElementById('hello-data').textContent) ;</script>
 <script src="//img.atcoder.jp/public/cfb85db/js/rating-graph.js"></script>
+</div>
+
+<div>
+<a href="https://atcoder.jp/users/{{name}}" target="_blank">{{name}}の実際のレートを見る</a>
+</div>
 
 <div class="twitter">
-	　<a href="//twitter.com/share" class="twitter-share-button" data-text="実際の{{name}}のレートは{{real}}で、一度も冷えなかった{{name}}のレートは{{highest}}です。({{dist}}) #一度も冷えなかった" data-url="https://tarareba.onrender.com/result/{{name}}/{{r}}" data-lang="ja">
+	<a href="//twitter.com/share" class="twitter-share-button" data-text="実際の{{name}}のレートは{{real}}で、一度も冷えなかった{{name}}のレートは{{highest}}です。({{dist}}) #一度も冷えなかった" data-url="https://tarareba.onrender.com/result/{{name}}/{{r}}" data-lang="ja">
 	 Tweet
 	 </a>
 	</div>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
+
 </center>
 
+	
 </body>
 </html>
