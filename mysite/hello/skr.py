@@ -18,7 +18,7 @@ def getdatas(name,dic):
     #print(data)
     ret = data.find_all("script")
     his = requests.get('https://atcoder.jp/users/'+name+'/history/json').json()
-    tmp = json.loads(str(ret[12])[27:-10])
+    tmp = json.loads(str(ret[13])[27:-10])
 
     for i in range(len(tmp)):
         tmp[i]["StandingsU"]=tmp[i]["StandingsUrl"]
@@ -160,7 +160,7 @@ def makeoutputDic(ans,ind,tmp):
 
 
 
-name="phocom"
+name="hdnkt"
 dic = manycontest()
 tmp,ratedHis = getdatas(name,dic)
 ans,ind=maximizeRate(tmp,ratedHis)
