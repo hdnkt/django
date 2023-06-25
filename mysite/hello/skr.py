@@ -48,7 +48,8 @@ def getdatasa(name):
     #print(data)
     ret = data.find_all("script")
     his = requests.get('https://atcoder.jp/users/'+name+'/history/json').json()
-    tmp = json.loads(str(ret[12])[27:-10])
+    #コンテストデータが13番目に入ってるから。AtCoder側の仕様変更で何度もこの数字を変える必要がある。
+    tmp = json.loads(str(ret[13])[27:-10])
 
     for i in range(len(tmp)):
         tmp[i]["StandingsU"]=tmp[i]["StandingsUrl"]
@@ -162,15 +163,11 @@ def makeoutputDic(ans,ind,tmp):
 
 name="hdnkt"
 dic = manycontest()
+tmp,ratedHis = getdatasa(name)
 tmp,ratedHis = getdatas(name,dic)
 ans,ind=maximizeRate(tmp,ratedHis)
 final = makeoutputDic(ans,ind,tmp)
-a = [[6,11]]
-b = []
-b.append(a[0])
-b[0][1]=8
 print(final)
-#[{6: 8}]
 
 
 #dic = manycontest()
